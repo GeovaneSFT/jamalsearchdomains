@@ -19,20 +19,18 @@ for i in range(0, len(table)):
             tlds.append(tld.text.strip())
 
 
-print(tlds)
+name = "jamal"
 
-nome = "jamal"
-
-abrir = False
+op = False
 
 for tld in tlds:
-    url = "https://" + nome + tld
+    url = "https://" + name + tld
     print(url)
     try:
         response = requests.get(url)
         if response.status_code == 200:
             print("O domínio existe")
-            if abrir:
+            if op:
                 webbrowser.open(url)
     except:
         print("O domínio não existe")
